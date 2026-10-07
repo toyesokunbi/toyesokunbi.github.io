@@ -58,16 +58,15 @@ svg{display:block}
   font-size:13.5px;font-weight:500;box-shadow:0 1px 0 rgba(255,255,255,.06),0 6px 20px rgba(0,0,0,.18);background:var(--menubar);-webkit-backdrop-filter:blur(30px) saturate(160%);backdrop-filter:blur(30px) saturate(160%);border-bottom:.5px solid var(--hair);text-shadow:0 0 1px rgba(0,0,0,.08)}
 .mb-l,.mb-r{display:flex;align-items:center;gap:2px;height:100%}
 .mb-item{height:24px;padding:0 10px;border-radius:7px;display:flex;align-items:center;gap:6px;white-space:nowrap}
-.mb-item:hover,.mb-item.open{background:var(--fill-2)}
 .mb-name{font-weight:700;letter-spacing:-.01em;gap:8px}
 .mb-name img{width:18px;height:18px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px var(--hair)}
 .mb-app{color:var(--text);opacity:.86}
 .mb-clock{font-variant-numeric:tabular-nums;padding:0 8px}
+.mb-item.open{background:var(--fill-2)}
 .menu{position:fixed;top:38px;left:10px;min-width:232px;padding:5px;border-radius:14px;z-index:950;font-size:13px;display:none;
   background:var(--glass-2);-webkit-backdrop-filter:blur(40px) saturate(180%);backdrop-filter:blur(40px) saturate(180%);border:1px solid var(--hair);box-shadow:var(--shadow),var(--spec)}
 .menu.show{display:block;animation:pop .16s var(--ease)}
 .menu button{display:flex;width:100%;justify-content:space-between;padding:5px 10px;border-radius:8px;text-align:left}
-.menu button:hover{background:var(--accent);color:#fff}
 .menu button kbd{font:inherit;opacity:.5}
 .menu hr{border:0;height:1px;background:var(--hair);margin:5px 8px}
 @keyframes pop{from{opacity:0;transform:scale(.97) translateY(-3px)}to{opacity:1;transform:none}}
@@ -94,7 +93,7 @@ svg{display:block}
 .w-label{position:absolute;left:0;right:0;bottom:-20px;text-align:center;font-size:11px;font-weight:500;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.6)}
 
 /* ---------- dock ---------- */
-.dock-wrap{position:fixed;left:0;right:0;bottom:10px;z-index:800;display:flex;justify-content:center;pointer-events:none}
+.dock-wrap{position:fixed;left:0;right:0;bottom:10px;z-index:870;display:flex;justify-content:center;pointer-events:none}
 .dock{pointer-events:auto;display:flex;align-items:flex-end;gap:6px;padding:7px 8px;border-radius:26px;height:72px}
 .dock-btn{position:relative;width:56px;height:56px;transform-origin:50% 100%;transition:transform .18s var(--ease),margin .18s var(--ease)}
 .dock.moving .dock-btn{transition:none}
@@ -110,7 +109,6 @@ svg{display:block}
 .honour .logo-tile{width:44px;height:44px;border-radius:12px;flex:none}
 .dock-btn .tip{position:absolute;bottom:calc(100% + 14px);left:50%;transform:translateX(-50%);padding:4px 10px;border-radius:8px;font-size:12px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .12s;
   background:var(--glass-2);-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px);border:1px solid var(--hair)}
-.dock-btn:hover .tip{opacity:1}
 .dock-btn .dot{position:absolute;left:50%;bottom:-6px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--text);opacity:0;transition:opacity .2s}
 .dock-btn.running .dot{opacity:.8}
 .dock-sep{width:1px;height:46px;background:var(--hair);margin:0 4px 5px}
@@ -138,11 +136,9 @@ svg{display:block}
 .tl .c{background:#ff5f57}.tl .m{background:#febc2e}.tl .z{background:#28c840}
 .tl .off{background:var(--fill-2)!important}
 .tl svg{width:8px;height:8px;opacity:0;color:rgba(0,0,0,.55)}
-.tl:hover svg{opacity:1}
 .win-title{position:absolute;left:96px;right:96px;text-align:center;font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none}
 .tb-right{margin-left:auto;display:flex;gap:6px;align-items:center;position:relative;z-index:1}
 .pill{height:30px;padding:0 12px;border-radius:15px;display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;background:var(--fill);border:1px solid var(--hair);box-shadow:var(--spec);text-decoration:none;white-space:nowrap}
-.pill:hover{background:var(--fill-2)}
 .pill.icon{width:30px;padding:0;justify-content:center}
 .pill.on{background:var(--fill-2)}
 .done{display:none}
@@ -161,12 +157,10 @@ svg{display:block}
 @keyframes gridIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .item{transition:background .18s}
 .thumb img{transition:transform .5s var(--ease)}
-.item:hover .thumb img{transform:scale(1.035)}
 .dock-btn.bounce{animation:bounce .55s cubic-bezier(.3,.6,.4,1)}
 @keyframes bounce{0%,100%{translate:0 0}35%{translate:0 -16px}60%{translate:0 0}78%{translate:0 -5px}}
 .menu.show{transform-origin:top left}
 .chips button{transition:background .2s,color .2s}
-.sb-i:hover{background:var(--fill)}
 .sb-i.sel{background:transparent}
 .sb-list:not(.ready) .sb-i.sel{background:var(--fill-2)}
 .sb-i.dragging{opacity:.4}
@@ -175,10 +169,10 @@ svg{display:block}
 .sb-i svg{width:17px;height:17px;flex:none;color:var(--accent)}
 .sb-i .n{margin-left:auto;color:var(--text-3);font-size:11.5px;font-variant-numeric:tabular-nums}
 .finder-main{flex:1;min-width:0;display:flex;flex-direction:column;margin:0 8px 8px;border-radius:var(--r-in);overflow:hidden;background:var(--content)}
+.grid>.item{flex-shrink:0}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:30px 22px;padding:24px 24px 36px;align-content:start}
 .item{display:flex;flex-direction:column;gap:12px;text-align:left;border-radius:16px;padding:8px;margin:-8px;color:inherit}
 .item .txt{display:flex;flex-direction:column;gap:5px;min-width:0}
-.item:hover{background:var(--fill)}
 .item:focus-visible,.sb-i:focus-visible,.pill:focus-visible,.dock-btn:focus-visible,.app:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .thumb{aspect-ratio:16/10;border-radius:10px;overflow:hidden;background:var(--fill-2);position:relative;box-shadow:0 0 0 .5px var(--hair)}
 .thumb img{width:100%;height:100%;object-fit:cover;display:block}
@@ -250,7 +244,6 @@ svg{display:block}
 .addr{padding:3px 10px;border-radius:12px;background:var(--fill-2);font-weight:500}
 .mail textarea{flex:1;border:0;background:none;resize:none;padding:16px;font:inherit;font-size:14.5px;line-height:1.55;color:var(--text);outline:none;min-height:140px}
 .send{background:var(--accent);color:#fff;border-color:transparent}
-.send:hover{background:var(--accent);filter:brightness(1.08)}
 
 /* ---------- Apps folder ---------- */
 .folder{position:fixed;inset:0;z-index:850;display:none;place-items:center;padding:20px;
@@ -259,6 +252,10 @@ svg{display:block}
 @keyframes fade{from{opacity:0}}
 .folder-inner{width:min(660px,100%);animation:grow .32s var(--ease)}
 @keyframes grow{from{opacity:0;transform:scale(.9)}}
+.folder-close{position:absolute;top:-6px;right:-6px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:var(--text);z-index:2;
+  background:var(--glass-2);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid var(--hair);box-shadow:var(--shadow),var(--spec)}
+.folder-close::before{content:"";position:absolute;inset:-8px}
+.folder-inner{position:relative}
 .folder-name{text-align:center;font-size:28px;font-weight:300;color:#fff;margin-bottom:18px;letter-spacing:-.01em;text-shadow:0 2px 12px rgba(0,0,0,.35)}
 .folder-panel{border-radius:40px;padding:26px 28px 30px;max-height:calc(100vh - 160px);overflow:auto;scrollbar-width:none;
   background:var(--glass);-webkit-backdrop-filter:blur(40px) saturate(180%);backdrop-filter:blur(40px) saturate(180%);border:1px solid var(--hair);box-shadow:var(--shadow),var(--spec)}
@@ -270,10 +267,8 @@ svg{display:block}
 .app .icon-tile svg{width:52%;height:52%}
 .app .wm{font-weight:800;font-size:17px;letter-spacing:-.03em}
 .app span.l{font-size:12px;font-weight:500;text-align:center}
-.app:hover .icon-tile{filter:brightness(1.08)}
 .honours{display:grid;gap:8px}
 .honour{display:flex;align-items:center;gap:14px;padding:10px 14px 10px 10px;border-radius:18px;text-decoration:none;background:var(--fill);border:1px solid var(--hair)}
-.honour:hover{background:var(--fill-2)}
 .honour .icon-tile{width:44px;height:44px;border-radius:12px;flex:none}
 .honour b{display:block;font-size:14px;font-weight:600}
 .honour small{font-size:12px;color:var(--text-2)}
@@ -310,9 +305,17 @@ svg{display:block}
   .win.closing{animation:sheetOut .22s ease-in both}
   @keyframes sheetIn{from{transform:translateY(100%)}to{transform:none}}
   @keyframes sheetOut{to{transform:translateY(100%)}}
-  .tl{display:none}
-  .done{display:inline-flex}
-  .win-title{left:70px;right:70px;font-size:15px}
+  .tl{gap:16px}
+  .tl span{width:15px;height:15px;position:relative}
+  .tl span::before{content:"";position:absolute;inset:-14px}
+  .tl svg{opacity:1;width:9px;height:9px}
+  .tl .z{display:none}
+  .grid>.item{flex-shrink:0}
+  .win{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;background:var(--content)!important}
+  .glass,.dock{-webkit-backdrop-filter:blur(14px) saturate(150%);backdrop-filter:blur(14px) saturate(150%)}
+  .folder{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+  .folder-panel{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--content)}
+  .win-title{left:84px;right:20px;font-size:15px;text-align:left}
   .titlebar{height:54px;padding:0 12px}
   .tb-right .pill:not(.done){display:none}
   .sidebar{display:none}
@@ -343,6 +346,20 @@ svg{display:block}
 @media (max-width:760px){
   .win{top:44px!important;height:calc(100% - 44px)!important;border-radius:22px 22px 0 0!important}
   .has-win .dock-wrap{display:none}
+  .folder-inner{margin-bottom:96px}
+}
+@media (hover:hover) and (pointer:fine){
+.mb-item:hover,.mb-item.open{background:var(--fill-2)}
+.menu button:hover{background:var(--accent);color:#fff}
+.dock-btn:hover .tip{opacity:1}
+.tl:hover svg{opacity:1}
+.pill:hover{background:var(--fill-2)}
+.item:hover .thumb img{transform:scale(1.035)}
+.sb-i:hover{background:var(--fill)}
+.item:hover{background:var(--fill)}
+.send:hover{background:var(--accent);filter:brightness(1.08)}
+.app:hover .icon-tile{filter:brightness(1.08)}
+.honour:hover{background:var(--fill-2)}
 }
 </style>
 </head>
@@ -400,7 +417,7 @@ svg{display:block}
 </nav></div>
 
 <div class="folder" id="folder" role="dialog" aria-modal="true" aria-label="Apps">
-  <div class="folder-inner">
+  <div class="folder-inner"><button class="folder-close" id="folderClose" aria-label="Close Apps"><svg width="12" height="12" viewBox="0 0 12 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 2l8 8M10 2 2 10"/></svg></button>
     <div class="folder-name">Apps</div>
     <div class="folder-panel">
       <div class="f-h">Profiles</div>
@@ -443,6 +460,9 @@ const SCENES={"depthMax": 0.18, "scenes": {"astronaut": {"dir": "layers", "w": 1
  * Ambient clock runs 1.75x the original speed. Transform/opacity only. */
 const TAU = Math.PI * 2;
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)');
+/* phones/tablets: no cursor, weaker GPU -> keep only the hero layers, run at ~30fps */
+const LITE = matchMedia('(hover:none), (pointer:coarse), (max-width:760px)').matches;
+const LITE_KEEP=new Set(['base','earth','rider','tether']);
 const AS=(d,f)=>{const u=d.assets&&d.assets[f];if(!u)throw new Error('missing asset '+f);return u;};
 function mulberry32(a){return function(){a|=0;a=(a+0x6D2B79F5)|0;let t=Math.imul(a^(a>>>15),1|a);t=(t+Math.imul(t^(t>>>7),61|t))^t;return((t^(t>>>14))>>>0)/4294967296;};}
 const clamp=(v,a,b)=>(v<a?a:v>b?b:v);
@@ -462,7 +482,7 @@ class Scene{
     this.def=def;this.el=document.createElement('div');this.el.className='am-scene';this.el.setAttribute('data-active','');
     this.fit=document.createElement('div');this.fit.className='am-fit';this.el.appendChild(this.fit);root.appendChild(this.el);
     const rnd=mulberry32(seed);
-    this.layers=def.layers.map((L,i)=>{
+    this.layers=def.layers.filter(L=>!LITE||LITE_KEEP.has(L.id)).map((L,i)=>{
       const node=document.createElement('div');node.className='am-layer';
       const[x,y,w,h]=L.box;
       node.style.left=(x/def.w*100)+'%';node.style.top=(y/def.h*100)+'%';node.style.width=(w/def.w*100)+'%';node.style.height=(h/def.h*100)+'%';node.style.zIndex=i;
@@ -529,7 +549,7 @@ class CursorMotion{
   focus(){const r=this.root.getBoundingClientRect();return r.width<760&&r.height>r.width?[0.40,0.5]:[0.5,0.5];}
   measure(){const r=this.root.getBoundingClientRect();const[fx,fy]=this.focus();this.scene.fitTo(r.width,r.height,fx,fy);
     window.dispatchEvent(new CustomEvent('wallpaper-fit',{detail:this.scene.box}));}
-  start(){if(this.running||REDUCED.matches)return;this.running=true;this.lastT=performance.now()/1000;const loop=()=>{if(!this.running)return;this.tick();this.raf=requestAnimationFrame(loop);};this.raf=requestAnimationFrame(loop);}
+  start(){if(this.running||REDUCED.matches)return;this.running=true;this.lastT=performance.now()/1000;let skip=false;const loop=()=>{if(!this.running)return;if(LITE&&(skip=!skip)){this.raf=requestAnimationFrame(loop);return;}this.tick();this.raf=requestAnimationFrame(loop);};this.raf=requestAnimationFrame(loop);}
   stop(){this.running=false;cancelAnimationFrame(this.raf);}
   tick(){
     const now=performance.now()/1000;const dt=Math.min(0.05,now-this.lastT);this.lastT=now;
@@ -814,9 +834,10 @@ const folder=$('#folder');
 function openFolder(){folder.classList.add('show');$('.dock-btn[data-app=apps]').classList.add('running');}
 function closeFolder(){folder.classList.remove('show');$('.dock-btn[data-app=apps]').classList.remove('running');}
 folder.onclick=e=>{if(!e.target.closest('.folder-panel'))closeFolder()};
+$('#folderClose').onclick=e=>{e.stopPropagation();closeFolder();};
 
 /* ---------- launch + dock ---------- */
-function launch(a){if(a==='finder')finder();else if(a==='apps')openFolder();else if(a==='about')about();else if(a==='mail')mail();}
+function launch(a){if(a!=='apps'&&folder.classList.contains('show'))closeFolder();else if(a==='apps'&&folder.classList.contains('show'))return closeFolder();if(a==='finder')finder();else if(a==='apps')openFolder();else if(a==='about')about();else if(a==='mail')mail();}
 const dock=$('#dock');
 $$('.dock-btn').forEach(b=>b.onclick=()=>{b.classList.remove('bounce');void b.offsetWidth;b.classList.add('bounce');setTimeout(()=>b.classList.remove('bounce'),600);launch(b.dataset.app);});
 dock.addEventListener('mousemove',e=>{if(mobile())return;dock.classList.add('moving');
