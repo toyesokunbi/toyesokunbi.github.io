@@ -216,6 +216,8 @@ svg{display:block}
 /* About this Mac */
 .about{display:flex;flex:1;min-height:0}
 .about-main{width:300px;flex:none;padding:6px 26px 22px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.about-main>*{flex-shrink:0}
+.about-main .pill{height:28px;padding:0 16px;font-size:12.5px;line-height:1;border-radius:14px}
 .about-main .face{width:132px;height:132px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px var(--hair),0 14px 34px rgba(0,0,0,.3);margin:4px 0 18px}
 .about-main h1{font-size:24px;font-weight:700;letter-spacing:-.02em;margin:0}
 .about-main .sub{font-size:12px;color:var(--text-2);margin:4px 0 18px;line-height:1.4}
@@ -757,7 +759,7 @@ function caseStudy(key){const c=D.cases[key];const tools=[];if(c.live)tools.push
 /* ---------- About This Mac ---------- */
 function about(){const B=D.bio;
   const ex=wins.get('about');if(ex){focusWin(ex);return;}
-  const W=openWin({id:'about',title:'',app:'About',owner:'about',w:300,hgt:560,noMax:true,noMin:true,build:win=>{
+  const W=openWin({id:'about',title:'',app:'About',owner:'about',w:300,hgt:620,noMax:true,noMin:true,build:win=>{
     win.style.resize='none';
     const more=h('div',{class:'about-more scroll'});
     const r=h('div',{class:'reader'});
@@ -783,7 +785,7 @@ function about(){const B=D.bio;
       btn,h('div',{class:'about-foot'},'toye.sokunbi@gmail.com'));
     const body=h('div',{class:'win-body about'},main,more);
     let busy=false;
-    const geom=open=>{const nw=open?Math.min(1000,innerWidth-40):300,nh=open?Math.min(640,innerHeight-130):560;return{w:nw,h:nh,l:Math.max(12,(innerWidth-nw)/2),t:Math.max(40,(innerHeight-nh)/2-36)};};
+    const geom=open=>{const nw=open?Math.min(1000,innerWidth-40):300,nh=open?Math.min(660,innerHeight-130):Math.min(620,innerHeight-130);return{w:nw,h:nh,l:Math.max(12,(innerWidth-nw)/2),t:Math.max(40,(innerHeight-nh)/2-36)};};
     const place=g=>{win.style.width=g.w+'px';win.style.height=g.h+'px';win.style.left=g.l+'px';win.style.top=g.t+'px';};
     btn.onclick=()=>{if(busy)return;busy=true;const open=!body.classList.contains('expanded');btn.textContent=open?'Less Info':'More Info…';
       if(mobile()){body.classList.toggle('expanded',open);requestAnimationFrame(()=>body.classList.toggle('shown',open));busy=false;return;}
