@@ -311,7 +311,10 @@ svg{display:block}
   .tl svg{opacity:1;width:9px;height:9px}
   .tl .z{display:none}
   .grid>.item{flex-shrink:0}
-  .win{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;background:var(--content)!important}
+  .win{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;background:var(--solid)!important}
+  [data-theme=dark]{--solid:#1c1c1f}
+  [data-theme=light]{--solid:#f5f5f7}
+  .folder-panel{background:var(--solid)!important}
   .glass,.dock{-webkit-backdrop-filter:blur(14px) saturate(150%);backdrop-filter:blur(14px) saturate(150%)}
   .folder{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
   .folder-panel{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--content)}
