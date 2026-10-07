@@ -248,7 +248,7 @@ svg{display:block}
 /* ---------- Apps folder ---------- */
 .folder{position:fixed;inset:0;z-index:850;display:none;place-items:center;padding:20px;
   background:rgba(0,0,0,.18);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%)}
-.folder{padding-top:52px}
+.folder{padding-top:52px;padding-bottom:120px;padding-bottom:calc(120px + env(safe-area-inset-bottom))}
 .folder.show{display:grid;animation:fade .2s ease}
 @keyframes fade{from{opacity:0}}
 .folder-inner{width:min(660px,100%);animation:grow .32s var(--ease)}
@@ -258,7 +258,7 @@ svg{display:block}
 .folder-close::before{content:"";position:absolute;inset:-8px}
 .folder-inner{position:relative}
 .folder-name{text-align:center;font-size:28px;font-weight:300;color:#fff;margin-bottom:18px;letter-spacing:-.01em;text-shadow:0 2px 12px rgba(0,0,0,.35)}
-.folder-panel{border-radius:40px;padding:26px 28px 30px;max-height:calc(100vh - 160px);overflow:auto;scrollbar-width:none;
+.folder-panel{border-radius:40px;padding:26px 28px 30px;max-height:calc(100vh - 52px - 120px - 70px);max-height:calc(100dvh - 52px - 120px - 70px);overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;
   background:var(--glass);-webkit-backdrop-filter:blur(40px) saturate(180%);backdrop-filter:blur(40px) saturate(180%);border:1px solid var(--hair);box-shadow:var(--shadow),var(--spec)}
 .f-h{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-2);margin:20px 4px 12px}
 .f-h:first-child{margin-top:0}
@@ -352,7 +352,6 @@ svg{display:block}
 @media (max-width:760px){
   .win{top:44px!important;height:calc(100% - 44px)!important;border-radius:22px 22px 0 0!important}
   .has-win .dock-wrap{display:none}
-  .folder-inner{margin-bottom:96px}
 }
 @media (hover:hover) and (pointer:fine){
 .mb-item:hover,.mb-item.open{background:var(--fill-2)}
